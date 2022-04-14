@@ -7,7 +7,7 @@ from .prefix_sum_structs import BIT
 class GreedyKS():
     
     def __init__(self, dist=norm(0,1), m=100, min_instances=0,
-                 drift_threshold=0.01, exact_prob=False, sum_struct=BIT
+                 drift_threshold=0.01, exact_prob=True, sum_struct=BIT
                 ):
         self.dist = dist
         self.m = int(m)
@@ -81,4 +81,4 @@ class GreedyKS():
         else:
             prob = kstwobign.sf(D * self.n**.5)
         
-        return (prob <= self.drift_threshold)
+        return prob <= self.drift_threshold
