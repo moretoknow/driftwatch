@@ -40,7 +40,7 @@ An algorithm/sketch for performing the Kolmogorov-Smirnov test interactively whi
 DriftWatch can be installed with the following pip command.
 
 ```sh
-$ pip install driftwatch
+$ pip install git+https://github.com/moretoknow/driftwatch
 ```
 
 If you notice anything unexpected, please open an [issue](https://github.com/moretoknow/driftwatch/issues) and let us know.
