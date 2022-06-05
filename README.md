@@ -1,12 +1,12 @@
-# GreedyKS
+# DriftWatch
 
-**GreedyKS** is an algorithm/sketch for performing the Kolmogorov-Smirnov test interactively while using a data stream as an incremental input. Its original implementation in Python is provided here.
+This is a collection of implementations of methods for concept drift detection.
 
 ---
 
 **Citing**
 
-If you find *GreedyKS* useful in your research, please cite the following paper:
+If you find *DriftWatch* useful in your research, please cite the following paper:
 
 ```bibtex
 @inproceedings{galeno_sketch_2021,
@@ -31,20 +31,22 @@ In detail, the following methods can be used:
 
 * **GreedyKS** from Galeno *et al.*: [A sketch for the KS test for Big Data](https://sol.sbc.org.br/index.php/kdmile/article/view/17455) (KDMiLe 2021, in portuguese)
 
+An algorithm/sketch for performing the Kolmogorov-Smirnov test interactively while using a data stream as an incremental input.
+
 ---
 
 **Installation**
 
-GreedyKS can be installed with the following pip command.
+DriftWatch can be installed with the following pip command.
 
 ```sh
-$ pip install greedyks
+$ pip install driftwatch
 ```
 
-If you notice anything unexpected, please open an [issue](https://github.com/moretoknow/greedyks/issues) and let us know.
+If you notice anything unexpected, please open an [issue](https://github.com/moretoknow/driftwatch/issues) and let us know.
 
 ---
 
 **License**
 
-- [MIT License](https://github.com/moretoknow/greedyks/blob/main/LICENSE)
+- [MIT License](https://github.com/moretoknow/driftwatch/blob/main/LICENSE)
