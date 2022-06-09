@@ -33,6 +33,19 @@ In detail, the following methods can be used:
 
 An algorithm/sketch for performing the Kolmogorov-Smirnov test interactively while using a data stream as an incremental input.
 
+* **Reservoir Sampling** from Bifet *et al.*: [Machine learning for data streams: with practical examples in MOA](https://doi.org/10.7551/mitpress/10654.001.0001) (MIT Press 2018)
+
+An algorithm that iteratively sample the input and calculate the exact value of the D statistic for the subsample. It is considered a baseline solution.
+
+* **IKS + Reservoir Sampling** from dos Reis *et al.*: [Fast Unsupervised Online Drift Detection Using Incremental Kolmogorov-Smirnov Test](https://doi.org/10.1145/2939672.2939836) (ACM 2016)
+
+An algorithm that uses the previously described Reservoir Sampling to interactively sample the input filtering it to IKS, an method for performing the Kolmogorov-Smirnov test which by default stores all its input, assuming the absence of memory restrictions.
+
+* **Lall + DDSketch** from Lall *et al.*: [Data Streaming Algorithms for the Kolmogorov-Smirnov Test](https://doi.org/10.1109/BigData.2015.7363746) (IEEE Computer Society 2015) and from Masson*et al.*: [DDSketch: A Fast and Fully-Mergeable Quantile Sketch with Relative-Error Guarantees](10.14778/3352063.3352135) (Proceedings of the VLDB Endowment 2019)
+
+A method which relies on any quantile sketch, combined with one of the state-of-the-art data structures for this purpose.
+
+
 ---
 
 **Installation**
