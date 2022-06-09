@@ -19,7 +19,6 @@ class ReservoirSampling():
         self.reservoir = []
         self.t = 0
         
-    #@profile
     def add_element(self, element):
         if len(self.reservoir) < self.size:
             self.reservoir.append(element)
@@ -51,7 +50,6 @@ class IksReservoir():
         self.reservoir = [[], []]
         self.t = 0
 
-    #@profile
     def add_element(self, element):
         if len(self.reservoir[0]) < self.size:
             ref_element = self.ref_distrib.rvs(1)
@@ -101,12 +99,9 @@ class LallDDSketch():
         self.vec_get_quantile_value = np.vectorize(self.dds.get_quantile_value)
         self.percents = []
     
-    #@profile
     def add_element(self, element):
         self.dds.add(element)
     
-    
-    #@profile
     def get_D(self):
         num_bins = len(self.dds.store.bins) + len(self.dds.negative_store.bins)
         if num_bins != len(self.percents):
@@ -114,59 +109,7 @@ class LallDDSketch():
         quantile_values = self.vec_get_quantile_value(self.percents)
         cdf_values = self.ref_distrib.cdf(quantile_values)
         dds_D = np.abs(cdf_values - self.percents).max()
-        return dds_D
-    
-    
-#    #@profile
-#    def get_D(self):
-#        dds_D = 0
-#        num_bins = len(self.dds.store.bins) + len(self.dds.negative_store.bins)
-#        for percent in np.linspace(0.0, 1.0, num_bins):
-#            v = self.dds.get_quantile_value(percent)
-#            cdf_v = self.ref_distrib.cdf(v)
-#            dds_D = max(dds_D, abs(percent-cdf_v))
-#        return dds_D
-    
+        return dds_D   
     
     def detected_change(self):
         return st.kstwo.sf(self.get_D(), self.dds.count) <= self.p_threshold
-
-#class LallDDSketch():
-#    def __init__(self, num_bins, error, ref_distrib, p_threshold=0.01):
-#        self.error = error
-#        self.p_threshold = p_threshold
-#        self.ref_distrib = ref_distrib
-#        self.percents = np.linspace(0.0, 1.0, num_bins)
-#        self.reset()
-#        
-#    def reset(self):
-#        self.dds = []
-#        self.vec_get_quantile_value = []
-#        
-#        for i in range(2):
-#            dds.append(ddsketch.BaseDDSketch(
-#                ddmapping.LogarithmicMapping(self.error),
-#                ddstore.DenseStore(1),
-#                ddstore.DenseStore(1),
-#                0
-#            ))
-#            self.vec_get_quantile_value.append(np.vectorize(self.dds[-1].get_quantile_value))
-#    
-#    @profile
-#    def add_element(self, element):
-#        self.dds[0].add(element)
-#        self.dds[1].add(self.ref_distrib.rvs(1))
-#    
-#    @profile
-#    def get_D(self):
-#        quantile_values = self.vec_get_quantile_value(self.percents)
-#        cdf_values = self.ref_distrib.cdf(quantile_values)
-#        dds_D = np.abs(cdf_values - self.percents).max()
-#        return dds_D    
-#    
-#    @profile
-#    def detected_change(self):
-#        num_bins = len(self.dds.store.bins) + len(self.dds.negative_store.bins)
-#        D = self.get_D()
-#        prob = st.kstwobign.sf(D * self.dds.count**.5)
-#        return (prob <= self.p_threshold)
