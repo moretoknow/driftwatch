@@ -9,18 +9,19 @@ This is a collection of implementations of methods for concept drift detection.
 If you find *DriftWatch* useful in your research, please cite the following paper:
 
 ```bibtex
-@inproceedings{galeno_sketch_2021,
-   title = {A sketch for the {KS} test for {Big} {Data}},
-   doi = {10.5753/kdmile.2021.17455},
-   url = {https://sol.sbc.org.br/index.php/kdmile/article/view/17455},
-   urldate = {2021-11-26},
-   address = {Brasil},
-   booktitle = {Anais do {IX} {Symposium} on {Knowledge} {Discovery}, {Mining} and {Learning} ({KDMiLe} 2021)},
-   publisher = {Sociedade Brasileira de Computação - SBC},
-   author = {Galeno, Thalis D. and Gama, João and Cardoso, Douglas O.},
-   month = oct,
-   year = {2021},
-   pages = {8--15},
+@article{cardoso_online_2023,
+	title = {Online evaluation of the {Kolmogorov}–{Smirnov} test on arbitrarily large samples},
+	volume = {67},
+	issn = {1877-7503},
+	url = {https://www.sciencedirect.com/science/article/pii/S1877750323000194},
+	doi = {10.1016/j.jocs.2023.101959},
+	urldate = {2024-07-01},
+	journal = {Journal of Computational Science},
+	author = {Cardoso, Douglas O. and Galeno, Thalis D.},
+	month = mar,
+	year = {2023},
+	keywords = {Data streams, Online learning, Concept drift, Change detection},
+	pages = {101959},
 }
 ```
 ---
