@@ -4,9 +4,9 @@ This is a collection of implementations of methods for concept drift detection.
 
 ---
 
-**Citing**
+**Research**
 
-If you find *DriftWatch* useful in your research, please cite the following paper:
+If you are curious about *DriftWatch* or find it useful to your research, please refer to the paper [Online evaluation of the Kolmogorov–Smirnov test on arbitrarily large samples](https://www.sciencedirect.com/science/article/pii/S1877750323000194):
 
 ```bibtex
 @article{cardoso_online_2023,
@@ -30,7 +30,7 @@ If you find *DriftWatch* useful in your research, please cite the following pape
 
 In detail, the following methods can be used:
 
-* **GreedyKS** from Galeno *et al.*: [A sketch for the KS test for Big Data](https://sol.sbc.org.br/index.php/kdmile/article/view/17455) (KDMiLe 2021, in portuguese)
+* **GreedyKS** from Cardoso and Galeno: [Online evaluation of the Kolmogorov–Smirnov test on arbitrarily large samples](https://www.sciencedirect.com/science/article/pii/S1877750323000194) (JoCS 2021)
 
 An algorithm/sketch for performing the Kolmogorov-Smirnov test interactively while using a data stream as an incremental input.
 
